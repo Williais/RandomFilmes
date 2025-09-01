@@ -13,11 +13,148 @@ body {
 }
 
 #container {
-    max-width: 80%;
+    max-width: 50%;
     margin: 10px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #333;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 500px;
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    &:focus {
+        outline: none;
+        border-color: #1E88E5;
+    }
+}
+
+#search-button {
+    background-color: #1E88E5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #1565C0;
+    }
+}
+
+.escondido {
+    display: none;
+}
+
+#listaFilmes-container {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    color: #1E1E1E;
+}
+
+#listaFilmes, #filmesAssistidos {
+    list-style-type: none;
+    background-color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#filmesAssistidos h2 {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#listaFilmes h2 {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+#filmesAssistidos p{
+    padding: 8px 0;
+    background-color: #9b2323;
+    color: white;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#listaFilmes p {
+    padding: 8px 0;
+    background-color: #1E88E5;
+    color: white;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#telaFilmeSorteado h1 {
+    color: #fff;
+}
+
+#telaFilmeSorteado{
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    color: #1E1E1E;
+}
+
+#filmeSorteado {
+    padding: 20px;
+    background-color: #671ee5;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#btnRandom {
+    background-color: #074a85;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #9b2323;
+    }
+}
+
+.btnTelas {
+    background: none;
+    color: #1E88E5;
+    border: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: block;
 }
