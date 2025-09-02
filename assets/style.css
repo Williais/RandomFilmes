@@ -46,7 +46,7 @@ input {
     }
 }
 
-#search-button {
+#btnAdicionar {
     background-color: #1E88E5;
     color: white;
     border: none;
@@ -76,7 +76,7 @@ input {
     color: #1E1E1E;
 }
 
-#listaFilmes, #filmesAssistidos {
+#listaFilmes, #filmesAssistidos-container {
     list-style-type: none;
     background-color: #fff;
     padding: 10px 20px;
@@ -84,7 +84,7 @@ input {
     border-radius: 10px;
 }
 
-#filmesAssistidos h2 {
+#filmesAssistidos-container h2 {
     padding: 10px 0;
     border-bottom: 1px solid #eee;
 }
@@ -95,7 +95,7 @@ input {
     margin-bottom: 10px;
 }
 
-#filmesAssistidos p{
+#filmesAssistidos-container p {
     padding: 8px 0;
     background-color: #9b2323;
     color: white;
@@ -157,4 +157,9 @@ input {
     transition: background-color 0.3s ease;
     margin-top: 10px;
     display: block;
+}
+
+h5{
+    text-align: center;
+    color: #9b2323;
 }

@@ -1,8 +1,38 @@
+let selecaoFilmes = [];
+let filmesAssistidos = [];
 
+const inputFilme = document.getElementById('inputFilme');
+const btnAdicionar = document.getElementById('btnAdicionar');
+const filmesParaAssistir = document.getElementById('filmesParaAssistir');
+const jaAssistidos = document.getElementById('filmesAssistidos');
 
+const filmeSorteado = document.getElementById('filmeSorteado');
+const btnRandom = document.getElementById('btnRandom');
 
+function renderizarListas() {
+    filmesParaAssistir.innerHTML = ''
+    jaAssistidos.innerHTML = ''
 
+    if (selecaoFilmes.length === 0) {
+        
+        filmesParaAssistir.innerHTML = "<h5>Nenhum filme adicionado.</h5>";
 
+    } else {
+        selecaoFilmes.forEach((filme) => {
+            filmesParaAssistir.innerHTML += `<p>${filme}</p>`;
+        });
+    }
+
+    if (filmesAssistidos.length === 0) {
+        
+        jaAssistidos.innerHTML = "<h5>Nenhum filme assistido.</h5>";
+    } else {
+        filmesAssistidos.forEach((filme) => {
+            jaAssistidos.innerHTML += `<p>${filme}</p>`;
+        });
+    }
+        
+}
 
 
 // Mudança de tela
@@ -24,8 +54,25 @@ function mudarTelas() {
         telaSortearFilme.classList.add('escondido');
         telaAdicionarFilme.classList.remove('escondido');
 
-        console.log('clicou');
     });
 }
 
+    
+btnAdicionar.addEventListener('click', () => {
+
+    const novoFilme = inputFilme.value.trim()
+
+    if(novoFilme !== ''){
+
+        selecaoFilmes.push(novoFilme)
+
+        inputFilme.value = ''
+
+        renderizarListas()
+    }
+})
+
+
+
 mudarTelas();
+renderizarListas()
