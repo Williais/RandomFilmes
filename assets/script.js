@@ -34,7 +34,6 @@ function renderizarListas() {
         
 }
 
-
 // Mudança de tela
 
 function mudarTelas() {
@@ -72,7 +71,24 @@ btnAdicionar.addEventListener('click', () => {
     }
 })
 
+btnRandom.addEventListener('click', () =>{
 
+    const totalDeFilmes = selecaoFilmes.length
+
+    if (totalDeFilmes !== 0) {
+        const indiceAleatorio = Math.floor(Math.random() * totalDeFilmes)
+
+        const filmeEscolhido = selecaoFilmes[indiceAleatorio]
+
+        filmesAssistidos.push(filmeEscolhido)
+
+        selecaoFilmes.slice(indiceAleatorio, 1)
+
+        filmeSorteado.textContent = filmeEscolhido
+
+        renderizarListas()
+    }
+})
 
 mudarTelas();
 renderizarListas()
