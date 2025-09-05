@@ -28,9 +28,11 @@ function carregarListaLS() {
 
     if (listaAssistidosSalva) {
 
-        filmeSorteado = JSON.parse(listaAssistidosSalva)
+        filmesAssistidos = JSON.parse(listaAssistidosSalva)
     }
 }
+
+carregarListaLS()
 
 function renderizarListas() {
     filmesParaAssistir.innerHTML = ''
@@ -78,8 +80,7 @@ function mudarTelas() {
 
     });
 }
-
-    
+ 
 btnAdicionar.addEventListener('click', () => {
 
     const novoFilme = inputFilme.value.trim()
@@ -106,7 +107,9 @@ btnRandom.addEventListener('click', () =>{
 
         filmesAssistidos.push(filmeEscolhido)
 
-        selecaoFilmes.slice(indiceAleatorio, 1)
+        selecaoFilmes.splice(indiceAleatorio, 1)
+
+
 
         filmeSorteado.textContent = filmeEscolhido
 
