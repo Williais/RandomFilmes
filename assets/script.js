@@ -9,6 +9,13 @@ const jaAssistidos = document.getElementById('filmesAssistidos');
 const filmeSorteado = document.getElementById('filmeSorteado');
 const btnRandom = document.getElementById('btnRandom');
 
+function salvarListaLS() {
+
+    localStorage.setItem('listaParaAssistir', JSON.stringify(selecaoFilmes))
+
+    localStorage.setItem('listaAssistidos', JSON.stringify(filmesAssistidos))
+}
+
 function renderizarListas() {
     filmesParaAssistir.innerHTML = ''
     jaAssistidos.innerHTML = ''
@@ -68,6 +75,7 @@ btnAdicionar.addEventListener('click', () => {
         inputFilme.value = ''
 
         renderizarListas()
+        salvarListaLS()
     }
 })
 
@@ -87,8 +95,10 @@ btnRandom.addEventListener('click', () =>{
         filmeSorteado.textContent = filmeEscolhido
 
         renderizarListas()
+        salvarListaLS()
     }
 })
 
 mudarTelas();
 renderizarListas()
+salvarListaLS()
